@@ -58,11 +58,11 @@ const Form = ({ handlerSearch }) => {
 
       if(!form.artist || !form.song){
           Alert("Llena ambos campos para buscar de manera efectiva");
+          return;
       };
 
-      handlerSearch(form);
-
       setForm(initialForm);
+
     };
 
     const classes = useStyles();

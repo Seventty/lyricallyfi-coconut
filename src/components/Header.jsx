@@ -4,7 +4,6 @@ import React from 'react'
 import SongSearch from './SongSearch';
 
 
-
 const useStyle = makeStyles((theme) => ({
     root: {
         display: "flex",
