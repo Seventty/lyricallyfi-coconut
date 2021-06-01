@@ -16,6 +16,7 @@ const SongSearch = () => {
     const [lyrics, setLyrics] = useState(null);
     const [bio, setBio] = useState(null);
     const [loading, setLoading] = useState(false);
+    
     const classes = useStyles();
 
     const handlerSearch = (data) => {

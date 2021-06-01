@@ -6,8 +6,8 @@ import SongLyrics from './SongLyrics'
 const Details = ({ search, lyrics, bio }) => {
     return (
         <div>
-            <SongArtist/>
-            <SongLyrics/>
+            {/* <SongArtist/>
+            <SongLyrics/> */}
         </div>
     )
 }

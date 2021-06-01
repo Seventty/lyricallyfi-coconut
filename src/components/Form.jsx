@@ -1,6 +1,7 @@
-
 import { makeStyles } from '@material-ui/core'
 import React, { useState, useEffect } from 'react'
+import Alert from '../extras/Alert';
+
 
 const initialForm = {
     artist: "",
@@ -45,18 +46,34 @@ const Form = ({ handlerSearch }) => {
     const [form, setForm] = useState(initialForm);
 
     const handlerChange = (e) => {
-        
+        setForm({
+            ...form,
+            [e.target.name]: e.target.value,
+        });      
+    
+    };
+
+    const handlerSubmit = (e) => {
+      e.preventDefault();
+
+      if(!form.artist || !form.song){
+          Alert("Llena ambos campos para buscar de manera efectiva");
+      };
+
+      handlerSearch(form);
+
+      setForm(initialForm);
     };
 
     const classes = useStyles();
     return (
         <div className={classes.artistForm}>
-            <form>
+            <form onSubmit={handlerSubmit}>
                 <div className="artist">
-                    <input type="text" className={classes.inputStyle} id="singer-id" placeholder="Introduce el nombre de cantante"  onChange={handlerChange} value={form.artist}/>
+                    <input type="text" name="artist" className={classes.inputStyle} id="singer-id" placeholder="Introduce el nombre de cantante"  onChange={handlerChange} />
                 </div>
                 <div className="song">
-                    <input type="text" className={classes.inputStyle} id="song-id" placeholder="Introduce la cancion del artista" onChange={handlerChange} value={form.song}/>
+                    <input type="text" name="song" className={classes.inputStyle} id="song-id" placeholder="Introduce la cancion del artista" onChange={handlerChange} />
                 </div>
                 <button type="submit" className={classes.buttonStyle}>Buscar coconut</button>
             </form>
