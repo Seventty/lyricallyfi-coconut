@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme)=> ({
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     backgroundPosition: '5% 50%',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/mobileBg.png'})`,
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',

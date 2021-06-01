@@ -69,12 +69,8 @@ const Form = ({ handlerSearch }) => {
     return (
         <div className={classes.artistForm}>
             <form onSubmit={handlerSubmit}>
-                <div className="artist">
-                    <input type="text" name="artist" className={classes.inputStyle} id="singer-id" placeholder="Introduce el nombre de cantante"  onChange={handlerChange} />
-                </div>
-                <div className="song">
-                    <input type="text" name="song" className={classes.inputStyle} id="song-id" placeholder="Introduce la cancion del artista" onChange={handlerChange} />
-                </div>
+                <input type="text" name="artist" className={classes.inputStyle} id="singer-id" placeholder="Introduce el nombre de cantante"  onChange={handlerChange} value={form.artist}/>
+                <input type="text" name="song" className={classes.inputStyle} id="song-id" placeholder="Introduce la cancion del artista" onChange={handlerChange} value={form.song}/>
                 <button type="submit" className={classes.buttonStyle}>Buscar coconut</button>
             </form>
         </div>
