@@ -4,11 +4,13 @@ import SongLyrics from './SongLyrics'
 
 
 const Details = ({ search, lyrics, bio }) => {
+    if(!search || !lyrics) return null;
+
     return (
-        <div>
-            {/* <SongArtist/>
-            <SongLyrics/> */}
-        </div>
+        <>
+            {lyrics.error || lyrics.name === "AbortError" ? console.log(`No existe la cancion ${search.song} que intentas buscar`) : <SongLyrics/>}
+            {bio.artists ? <SongArtist/> : console.log(`No he encontrado el artista ${search.artist} solicitado`)}
+        </>
     )
 }
 

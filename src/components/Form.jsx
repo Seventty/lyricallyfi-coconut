@@ -35,10 +35,6 @@ const useStyles = makeStyles((themes) => ({
     background: "linear-gradient(to left, #40e495, #40e495)",
     boxShadow: "0 4px 15px 0 rgba(49, 196, 190, 0.75)",
     textArea: "",
-
-    "&:hover": {
-        
-    },
  },
 }));
 
@@ -61,6 +57,8 @@ const Form = ({ handlerSearch }) => {
           return;
       };
 
+      handlerSearch(form);
+
       setForm(initialForm);
 
     };
@@ -69,8 +67,8 @@ const Form = ({ handlerSearch }) => {
     return (
         <div className={classes.artistForm}>
             <form onSubmit={handlerSubmit}>
-                <input type="text" name="artist" className={classes.inputStyle} id="singer-id" placeholder="Introduce el nombre de cantante"  onChange={handlerChange} value={form.artist}/>
-                <input type="text" name="song" className={classes.inputStyle} id="song-id" placeholder="Introduce la cancion del artista" onChange={handlerChange} value={form.song}/>
+                <input type="text" name="artist" className={classes.inputStyle} id="singer-id" placeholder="Nombre del cantante"  onChange={handlerChange} value={form.artist}/>
+                <input type="text" name="song" className={classes.inputStyle} id="song-id" placeholder="Título de la canción" onChange={handlerChange} value={form.song}/>
                 <button type="submit" className={classes.buttonStyle}>Buscar coconut</button>
             </form>
         </div>
