@@ -27,4 +27,3 @@ const Details = ({ search, lyrics, bio }) => {
 
 export default Details
 
-//{lyrics.error || lyrics.name === "AbortError" ? console.log(`No existe la cancion ${search.song} que intentas buscar`) : <SongLyrics lyrics={lyrics.lyrics}/>}

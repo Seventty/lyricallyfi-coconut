@@ -41,6 +41,12 @@ const useStyles = makeStyles({
       color: "#1dc976",
       fontWeight: "bolder",
   },
+  artistButton: {
+    textDecoration: "none",
+    '&:link':{
+      textDecoration: "none",
+    },
+  }
 });
 
 export default function SongArtist({ artist }) {
@@ -73,7 +79,7 @@ export default function SongArtist({ artist }) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button className={classes.artistButton} size="small">
           <a href={`http://${strWebsite}`}>Website</a>
         </Button>
       </CardActions>

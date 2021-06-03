@@ -9,7 +9,17 @@ const useStyles = makeStyles((theme) => ({
     title: {
         color: "#fff",
         fontFamily: "Nunito"
-    }
+    },
+    loaderPositionLeft: {
+        position: "absolute",
+        left: "100px",
+        top: "170px",
+    },
+    loaderPositionRight: {
+        position: "absolute",
+        right: "100px",
+        top: "170px",
+    },
 }));
 
 const SongSearch = () => {
@@ -45,7 +55,17 @@ const SongSearch = () => {
 
     return (
         <div>
-            {loading && <Loader/>}
+            {loading && (
+                <div>
+                <div className={classes.loaderPositionLeft}>
+                    <Loader/> 
+                </div>
+                    <div className={classes.loaderPositionRight}>
+                        <Loader/>
+                    </div>
+                </div>
+                )
+            }
             <h1 className={classes.title}>Busca cualquier canción</h1>
             <Form handlerSearch={handlerSearch}/>
             {search && !loading && (
