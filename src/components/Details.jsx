@@ -8,8 +8,8 @@ const Details = ({ search, lyrics, bio }) => {
 
     return (
         <>
-            {lyrics.error || lyrics.name === "AbortError" ? console.log(`No existe la cancion ${search.song} que intentas buscar`) : <SongLyrics/>}
-            {bio.artists ? <SongArtist/> : console.log(`No he encontrado el artista ${search.artist} solicitado`)}
+            {lyrics.error || lyrics.name === "AbortError" ? console.log(`No existe la cancion ${search.song} que intentas buscar`) : <SongLyrics lyrics={lyrics.lyrics}/>}
+            {bio.artists ? <SongArtist artist={bio.artists[0]}/> : console.log(`No he encontrado el artista ${search.artist} solicitado`)}
         </>
     )
 }

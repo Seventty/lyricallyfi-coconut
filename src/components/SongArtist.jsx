@@ -1,9 +1,10 @@
 import React from 'react'
 
-const SongArtist = () => {
+const SongArtist = ({ artist }) => {
+    console.log(artist);
     return (
         <div>
-            <h2>Informacion de artista</h2>
+            <p>Informacion del artista</p>
         </div>
     )
 }
