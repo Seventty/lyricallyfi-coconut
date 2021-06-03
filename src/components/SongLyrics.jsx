@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import { Collapse } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
@@ -39,8 +40,18 @@ const useStyles = makeStyles({
 export default function SongArtist({ song, lyrics }) {
   const classes = useStyles();
 
+  const [checked, setChecked] = useState(false);
+  useEffect(() => {
+    setChecked(true);
+  }, []);
+
   return (
-    <Card className={classes.root}>
+    <Collapse
+        in={checked}
+        {...(checked ? { timeout: 1000 } : {})}
+        
+      >
+        <Card className={classes.root}>
       <CardActionArea>
         <CardContent className={classes.cardBox}>
           <Typography className={classes.lyricsTitle} gutterBottom variant="h5" component="h2">
@@ -52,5 +63,7 @@ export default function SongArtist({ song, lyrics }) {
         </CardContent>
       </CardActionArea>
     </Card>
+      </Collapse>
+    
   );
 }

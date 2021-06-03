@@ -30,6 +30,7 @@ const useStyle = makeStyles((theme) => ({
 
 const Header = () => {
     const classes = useStyle();
+
     return (
         <div className={classes.root}>
             <AppBar className={classes.appbar} elevation={0}>

@@ -27,6 +27,7 @@ const SongSearch = () => {
     const [lyrics, setLyrics] = useState(null);
     const [bio, setBio] = useState(null);
     const [loading, setLoading] = useState(false);
+
     
     const classes = useStyles();
 
@@ -46,6 +47,7 @@ const SongSearch = () => {
             const [ artistReq, songReq ] = await Promise.all([httpHelper().get(artistUrl), httpHelper().get(songUrl)]);
             
             setBio(artistReq);
+
             setLyrics(songReq);
             
            setLoading(false);
