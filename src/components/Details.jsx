@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core'
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import SongArtist from './SongArtist'
 import SongLyrics from './SongLyrics'
 
