@@ -1,6 +1,7 @@
 import { AppBar, Toolbar } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles'
 import React from 'react'
+import SongArtist from './SongArtist';
 import SongSearch from './SongSearch';
 
 
