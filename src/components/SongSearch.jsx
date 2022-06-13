@@ -39,7 +39,7 @@ const SongSearch = () => {
         if(search === null) return;
         const request = async() => {
           const { artist, song } = search;
-          let artistUrl = encodeURI(`https://www.theaudiodb.com/api/v1/json/1/search.php?s=${artist}`);
+          let artistUrl = encodeURI(`https://www.theaudiodb.com/api/v1/json/2/search.php?s=${artist}`);
           let songUrl = encodeURI(`https://api.lyrics.ovh/v1/${artist}/${song}`);
             
           setLoading(true);
